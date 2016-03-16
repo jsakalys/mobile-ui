@@ -1,0 +1,16 @@
+.navbar {
+  background-color: navy;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+}
+
+.menu-button {
+  display: inline-block;
+  background-color: white;
+  height: 50px;
+  width: 50px;
+  line-height: 100px;
+  vertical-align: middle;
+  margin: 25px;
+}

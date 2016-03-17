@@ -47,7 +47,7 @@ p, h1 {
 
 .menu-header {
   height: 112px;
-  background-image: url('/img/sky.jpeg');
+  background-image: url('../img/sky.jpeg');
   background-size: 100vw;
 }
 

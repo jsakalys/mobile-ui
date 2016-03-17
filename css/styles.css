@@ -1,6 +1,11 @@
 body {
   font: sans-serif;
 }
+
+div {
+  box-sizing: border-box;
+}
+
 .navbar {
   background-color: navy;
   height: 100px;
@@ -58,6 +63,24 @@ body {
   text-transform: uppercase;
   border-bottom: solid 1px white;
   padding-left: 15px;
+}
+
+.icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.sub-menu {
+  background-color: purple;
+  border-left: solid 1px white;
+  width: 80vw;
+  height: calc(100vh - 100px);
+  position: absolute;
+  right: calc(-80vw);
 }
 
 .main-panel {

@@ -1,6 +1,6 @@
 var menuItems = [
 	{
-		title: 'My Schedule and Bidding'
+		title: 'My Schedule and Bidding',
 	},
 	{
 		title: 'Safety'
@@ -34,7 +34,7 @@ var menuItems = [
 document.addEventListener('DOMContentLoaded', function(){
 	for (var i = 0; i < menuItems.length; i++) {
 		// Append menu items
-		document.getElementById('mainMenu').innerHTML += '<div class="menu-item">' + menuItems[i].title + '</div>'
+		document.getElementById('mainMenu').innerHTML += '<div class="menu-item"><span class="icon"></span>' + menuItems[i].title + '</div>'
 
 	}
 	// Show main menu on navi click

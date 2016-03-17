@@ -110,6 +110,11 @@ document.addEventListener('DOMContentLoaded', function(){
 			// Bring sub menu out of view
 			document.getElementById('subMenu').style.right = '-100vw';
 		};
+		// fade in menu
+		var allMenuItems = document.getElementsByClassName('menu-item');
+		for (var i = 0; i < allMenuItems.length; i++) {
+			allMenuItems[i].style.opacity = '1';
+		}
 	});
 
 	// Sort of hacky, but use setTimeout so that menuItems is not undefined when attempting to add event listener to each menu item
@@ -117,14 +122,24 @@ document.addEventListener('DOMContentLoaded', function(){
 		var allMenuItems = document.getElementsByClassName('menu-item');
 		for (var i = 0; i < menuItems.length; i++) {
 	    	allMenuItems[i].addEventListener('click', function(e){
+	    		// Remove active state from all other menu items
+	    		var children = e.target.parentNode.childNodes
+	    		for (var x = 0; x < children.length; x++) {
+	    			console.log(children[x])
+	    			if (children[x].nodeName !== '#text' && children[x].classList.contains('menu-item')) {
+	    				children[x].style.background = '#3371A7';
+	    				children[x].style.color = '#FFFFFF'
+	    			}
+	    		}
 	    		// Change color to represent active state
-	    		e.target.style.background = 'white';
+	    		e.target.style.background = '#FFFFFF';
 	    		e.target.style.color = '#3371A7';
 	    		// Change child nodes to represent active state
-	    		if (e.target.childNodes) {
-	    			e.target.childNodes[0].style.background = 'white';
+	    		if (e.target.childNodes.length > 2) {
+	    			console.log(e.target.childNodes)
+	    			e.target.childNodes[0].style.background = '#FFFFFF';
 		    		e.target.childNodes[0].style.color = '#3371A7';
-		    		e.target.childNodes[2].style.background = 'white';
+		    		e.target.childNodes[2].style.background = '#FFFFFF';
 		    		e.target.childNodes[2].style.color = '#3371A7';
 	    		};
 	    		// Get index of item clicked
@@ -135,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function(){
 					// Reset contents of div
 					document.getElementById('subMenu').innerHTML = '';
 					// Append sub menu heading
-					document.getElementById('subMenu').innerHTML += '<div id="menuHeading" class="menu-item">' + menuItems[idx].title + '<i class="right-x fa fa-times"></i></div>';
+					document.getElementById('subMenu').innerHTML += '<div id="menuHeading" class="menu-item sub-item">' + menuItems[idx].title + '<i class="right-x fa fa-times-circle"></i></div>';
 					// Hide sub menu if menu heading clicked, again using setTimeout
 					setTimeout(function(){
 						document.getElementById('menuHeading').addEventListener('click', function(){
@@ -144,8 +159,8 @@ document.addEventListener('DOMContentLoaded', function(){
 							// Remove active state colors
 							e.target.style.background = '#3371A7';
 		    				e.target.style.color = '#FFFFFF';
-				    		if (e.target.childNodes) {
-				    			e.target.childNodes[0].style.background = '#3371A7';
+				    		if (e.target.childNodes.length > 2) {
+				    			e.target.childNodes[0].style.background = 'transparent';
 					    		e.target.childNodes[0].style.color = '#FFFFFF';
 					    		e.target.childNodes[2].style.background = '#4680B1';
 					    		e.target.childNodes[2].style.color = '#FFFFFF';

@@ -1,5 +1,5 @@
 body {
-  font: sans-serif;
+  font-family: arial, sans-serif;
 }
 
 div {
@@ -7,98 +7,101 @@ div {
 }
 
 .navbar {
-  background-color: navy;
-  height: 100px;
-  line-height: 100px;
+  background-color: #133C60;
+  height: 64px;
+  line-height: 64px;
   vertical-align: middle;
 }
 
 .brand-logo {
-  background-color: red;
+  height: 64px;
+  font-size: 18px;
   color: white;
   float: left;
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 .menu-button {
   background-color: white;
-  width: 50px;
-  height: 50px;
-  line-height: 100px;
-  margin: 25px;
+  width: 32px;
+  height: 32px;
+  margin: 16px;
   float: right;
 }
 
 .main-menu {
   background-color: green;
   width: 100vw;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 64px);
   position: absolute;
   left: -100vw;
 }
 
 .menu-header {
-  height: 150px;
+  height: 112px;
 /*  background-image: url('/img/sky.jpeg');*/
   background-size: cover;
 }
 
 .greeting {
   color: white;
-  font-weight: 1.1rem;
-  letter-spacing: 1px;
+  font-size: 1.1rem;
   padding-left: 15px;
   padding-top: 15px;
 }
 
 .menu-item {
-  height: 100px;
-  line-height: 100px;
+  height: 80px;
+  line-height: 80px;
   font-size: 1.1rem;
-  font-weight: bold;
-  letter-spacing: 1px;
   vertical-align: middle;
-  background-color: lightBlue;
+  background-color: #3371A7;
   color: white;
   text-transform: uppercase;
   border-bottom: solid 1px white;
-  padding-left: 15px;
+  padding-left: 16px;
 }
 
 .icon {
   display: inline-block;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   background-color: white;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 16px;
 }
 
 .sub-menu {
   background-color: purple;
   border-left: solid 1px white;
   width: 80vw;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 64px);
   position: absolute;
-  right: calc(-80vw);
+  right: -80vw;
 }
+
 
 .main-panel {
   position: relative;
   clear: both;
-  background-color: pink;
-  height: calc(100vh - 100px); /* subtract menu-bar */
+  background-color: #FFFFFF;
+  height: calc(100vh - 64px); /* subtract menu-bar */
   overflow-x: hidden;
   overflow-y: auto;
 }
 
+.bread-crumb {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
 .main-content {
   position: absolute;
-  padding: 15px;
+  padding: 16px;
 }
 
 .bread-crumb {
-  background-color: gray;
+  background-color: #3371A7;
   line-height: 20px;
   vertical-align: middle;
   padding: 15px;

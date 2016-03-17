@@ -1,6 +1,20 @@
 var menuItems = [
 	{
-		title: 'My Schedule and Bidding',
+		title: 'My Schedule & Bidding',
+		children: [
+			{
+				title: 'Reporting'
+			},
+			{
+				title: 'Agriculture and Customs'
+			},
+			{
+				title: 'Known Crewmembmer'
+			},
+			{
+				title: 'Product Safety Data Search'
+			}
+		]
 	},
 	{
 		title: 'Safety'
@@ -9,7 +23,27 @@ var menuItems = [
 		title: 'Training'
 	},
 	{
-		title: 'Administration'
+		title: 'Administration',
+		children: [
+			{
+				title: 'OJI and Leaves'
+			},
+			{
+				title: 'Pay and Benefits'
+			},
+			{
+				title: 'Performance'
+			},
+			{
+				title: 'Inflight Resource Directory',
+			},
+			{
+				title: 'Mobile and Web'
+			},
+			{
+				title: 'AFA'
+			}
+		]
 	},
 	{
 		title: 'Catering'
@@ -35,12 +69,12 @@ document.addEventListener('DOMContentLoaded', function(){
 	for (var i = 0; i < menuItems.length; i++) {
 		// Append menu items
 		document.getElementById('mainMenu').innerHTML += '<div class="menu-item"><span class="icon"></span>' + menuItems[i].title + '</div>'
-
 	}
+
 	// Show main menu on navi click
 	document.getElementById('menuButton').addEventListener('click', function(){
-		var menuPos = document.getElementById('mainMenu').style.left;
-		if (menuPos !== '0px') {
+		var menuPosition = document.getElementById('mainMenu').style.left;
+		if (menuPosition !== '0px') {
 			document.getElementById('mainContent').style.left = '100vw';
 			document.getElementById('mainMenu').style.left = '0px';
 		} else {
@@ -48,4 +82,11 @@ document.addEventListener('DOMContentLoaded', function(){
 			document.getElementById('mainMenu').style.left = '-100vw';
 		};
 	});
+
+	// var menuItems = document.getElementsByClassName('menu-item');
+	// for (var i=0; i < menuItems.length; i++) {
+ //    	menuItems[i].addEventListener('click', function(){
+	// 		alert('yo')
+	// 	});
+ //    };
 });

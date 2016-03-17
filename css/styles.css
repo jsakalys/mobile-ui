@@ -20,7 +20,7 @@ p, h1 {
 .brand-logo {
   height: 64px;
   font-size: 18px;
-  color: white;
+  color: #FFFFFF;
   float: left;
   padding-left: 16px;
 }
@@ -28,7 +28,7 @@ p, h1 {
 .menu-button {
   text-align: center;
   font-size: 28px;
-  color: white;
+  color: #FFFFFF;
   width: 32px;
   height: 32px;
   margin: 16px;
@@ -52,7 +52,7 @@ p, h1 {
 }
 
 .greeting {
-  color: white;
+  color: #FFFFFF;
   font-size: 1.1rem;
   padding-left: 15px;
   padding-top: 15px;
@@ -64,7 +64,7 @@ p, h1 {
   font-size: 1.1rem;
   vertical-align: middle;
   background-color: #3371A7;
-  color: white;
+  color: #FFFFFF;
   cursor: pointer;
   text-transform: uppercase;
   border-bottom: solid 1px rgba(255,255,255,.25);
@@ -99,7 +99,7 @@ p, h1 {
     transition-delay: .2s;
 }
 
-.right-arrow {
+.right-arrow, .right-x {
   width: 20vw;
   height: 80px;
   background-color: #4680B1;
@@ -108,7 +108,11 @@ p, h1 {
   line-height: 80px;
   text-align: center;
   font-size: 28px;
-  color: white;
+  color: #FFFFFF;
+}
+
+.right-x {
+  background-color: transparent;
 }
 
 .main-panel {

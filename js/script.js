@@ -88,6 +88,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	// Show main menu on navi click
 	document.getElementById('menuButton').addEventListener('click', function(){
+		// change menu bars to 'x' sign or vice versa
+		if (this.classList.contains('fa-bars')) {
+			this.classList.remove('fa-bars');
+			this.classList.add('fa-times');
+		} else if (this.classList.contains('fa-times')) {
+			this.classList.remove('fa-times');
+			this.classList.add('fa-bars');
+		};
 		var menuPosition = document.getElementById('mainMenu').style.left;
 		if (menuPosition !== '0px') {
 			// Bring main content out of view
@@ -112,6 +120,13 @@ document.addEventListener('DOMContentLoaded', function(){
 	    		// Change color to represent active state
 	    		e.target.style.background = 'white';
 	    		e.target.style.color = '#3371A7';
+	    		// Change child nodes to represent active state
+	    		if (e.target.childNodes) {
+	    			e.target.childNodes[0].style.background = 'white';
+		    		e.target.childNodes[0].style.color = '#3371A7';
+		    		e.target.childNodes[2].style.background = 'white';
+		    		e.target.childNodes[2].style.color = '#3371A7';
+	    		};
 	    		// Get index of item clicked
 	    		var idx = this.getAttribute('data-index');
 				if (menuItems[idx].children) {
@@ -120,7 +135,23 @@ document.addEventListener('DOMContentLoaded', function(){
 					// Reset contents of div
 					document.getElementById('subMenu').innerHTML = '';
 					// Append sub menu heading
-					document.getElementById('subMenu').innerHTML += '<div class="menu-item">' + menuItems[idx].title + '</div>';
+					document.getElementById('subMenu').innerHTML += '<div id="menuHeading" class="menu-item">' + menuItems[idx].title + '<i class="right-x fa fa-times"></i></div>';
+					// Hide sub menu if menu heading clicked, again using setTimeout
+					setTimeout(function(){
+						document.getElementById('menuHeading').addEventListener('click', function(){
+							// Bring sub menu out of view if heading clicked
+							document.getElementById('subMenu').style.right = '-100vw';
+							// Remove active state colors
+							e.target.style.background = '#3371A7';
+		    				e.target.style.color = '#FFFFFF';
+				    		if (e.target.childNodes) {
+				    			e.target.childNodes[0].style.background = '#3371A7';
+					    		e.target.childNodes[0].style.color = '#FFFFFF';
+					    		e.target.childNodes[2].style.background = '#4680B1';
+					    		e.target.childNodes[2].style.color = '#FFFFFF';
+				    		};
+						});
+					}, 0);
 					for (var j = 0; j < menuItems[idx].children.length; j++) {
 						// Append sub menu items
 						document.getElementById('subMenu').innerHTML += '<div class="menu-item sub-item">' + menuItems[idx].children[j].title + '</div>';
@@ -128,11 +159,10 @@ document.addEventListener('DOMContentLoaded', function(){
 				} else {
 					// Bring sub menu out of view
 					document.getElementById('subMenu').style.right = '-100vw';
+					// Iterate through menu items, reset colors
 				};
 			});
 	    };
 	}, 0);
-
-	// Hide sub menu if clicked outside
 
 });

@@ -1,3 +1,6 @@
+body {
+  font: sans-serif;
+}
 .navbar {
   background-color: navy;
   height: 100px;
@@ -29,14 +32,45 @@
   left: -100vw;
 }
 
+.menu-header {
+  height: 150px;
+/*  background-image: url('/img/sky.jpeg');*/
+  background-size: cover;
+}
+
+.greeting {
+  color: white;
+  font-weight: 1.1rem;
+  letter-spacing: 1px;
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.menu-item {
+  height: 100px;
+  line-height: 100px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  vertical-align: middle;
+  background-color: lightBlue;
+  color: white;
+  text-transform: uppercase;
+  border-bottom: solid 1px white;
+  padding-left: 15px;
+}
+
 .main-panel {
+  position: relative;
   clear: both;
   background-color: pink;
   height: calc(100vh - 100px); /* subtract menu-bar */
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .main-content {
+  position: absolute;
   padding: 15px;
 }
 

@@ -6,6 +6,10 @@ div {
   box-sizing: border-box;
 }
 
+p, h1 {
+  padding: 0px 16px;
+}
+
 .navbar {
   background-color: #133C60;
   height: 64px;
@@ -22,25 +26,29 @@ div {
 }
 
 .menu-button {
-  background-color: white;
+  text-align: center;
+  font-size: 28px;
+  color: white;
   width: 32px;
   height: 32px;
   margin: 16px;
   float: right;
+  cursor: pointer;
 }
 
 .main-menu {
   background-color: green;
   width: 100vw;
-  height: calc(100vh - 64px);
   position: absolute;
   left: -100vw;
+  -webkit-transition: left .2s; /* Safari */
+    transition: left .2s;
 }
 
 .menu-header {
   height: 112px;
-/*  background-image: url('/img/sky.jpeg');*/
-  background-size: cover;
+  background-image: url('/img/sky.jpeg');
+  background-size: 100vw;
 }
 
 .greeting {
@@ -57,37 +65,58 @@ div {
   vertical-align: middle;
   background-color: #3371A7;
   color: white;
+  cursor: pointer;
   text-transform: uppercase;
-  border-bottom: solid 1px white;
+  border-bottom: solid 1px rgba(255,255,255,.25);
   padding-left: 16px;
+}
+
+.sub-item {
+  text-transform: Capitalize;
+  padding-left: 32px;
 }
 
 .icon {
   display: inline-block;
+  font-size: 28px;
+  text-align: center;
   width: 32px;
   height: 32px;
-  background-color: white;
   vertical-align: middle;
   margin-right: 16px;
 }
 
 .sub-menu {
-  background-color: purple;
-  border-left: solid 1px white;
+  background-color: #3371A7;
+  border-left: solid 1px rgba(255,255,255,.5);
   width: 80vw;
   height: calc(100vh - 64px);
   position: absolute;
   right: -80vw;
+  overflow-y: auto;
+  -webkit-transition: right .2s; /* Safari */
+    transition: right .2s;
+    transition-delay: .2s;
 }
 
+.right-arrow {
+  width: 20vw;
+  height: 80px;
+  background-color: #4680B1;
+  float: right;
+  vertical-align: middle;
+  line-height: 80px;
+  text-align: center;
+  font-size: 28px;
+  color: white;
+}
 
 .main-panel {
   position: relative;
   clear: both;
   background-color: #FFFFFF;
   height: calc(100vh - 64px); /* subtract menu-bar */
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .bread-crumb {
@@ -96,8 +125,10 @@ div {
 }
 
 .main-content {
+  width: 100vw;
   position: absolute;
-  padding: 16px;
+  -webkit-transition: right .2s; /* Safari */
+    transition: right .2s;
 }
 
 .bread-crumb {
